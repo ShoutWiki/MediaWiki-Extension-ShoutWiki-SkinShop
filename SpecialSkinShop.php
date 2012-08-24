@@ -7,10 +7,21 @@ class SpecialSkinShop extends SpecialPage {
         }
 
         public function execute( $par ) {
+			global $wgSkinShopAvailable;
 			$out = $this->getOutput();
 			$this->setHeaders();
-			
+
 			$out->addModules( 'ext.skinshop' );
+
+			foreach( $wgSkinShopAvailable as &$shopskin ) {
+				$out->addHTML( '<div class="skinshop-skindesc">' );
+				$out->addHTML( '<h2>' . $shopskin . '</h2>' );
+				$out->addHTML( '<img alt="' . $shopskin . '" border="0" src="img/skin-' . $shopskin . '.png">' );
+				$out->addWikiMsg( 'skinshop-' . $shopskin . '-desc' );
+				$out->addHTML( '<div class="skinshop-skinprice">' . wfMessage( 'skinshop-price' )->plain() . ': $' . wfMessage('skinshop-' . $shopskin . '-price' )->plain() . '</div>' )	;
+				$out->addHTML( '</div>' );
+			};
+
 			$out->addHTML( '
 				<div id="skinshop-payment">
 					<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
@@ -24,7 +35,7 @@ class SpecialSkinShop extends SpecialPage {
 							<option value="phpBB">phpBB : $4.99 USD - yearly</option>
 							<option value="Truglass">Truglass : $4.99 USD - yearly</option>
 					</select> </td></tr>
-					<tr><td><input type="hidden" name="on1" value="Domain">' . wfMsg( 'skinshop-domain' ) . '</td></tr><tr><td><input type="text" name="os1" maxlength="200"></td></tr>
+					<tr><td><input type="hidden" name="on1" value="Domain">' . wfMessage( 'skinshop-domain' )->plain() . '</td></tr><tr><td><input type="text" name="os1" maxlength="200"></td></tr>
 					</table>
 					<input type="hidden" name="currency_code" value="USD">
 					<input type="image" src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_subscribeCC_LG.gif" border="0" name="submit" alt="PayPal . The safer, easier way to pay online.">
