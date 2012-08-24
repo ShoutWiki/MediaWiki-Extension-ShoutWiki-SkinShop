@@ -43,5 +43,6 @@ $wgSpecialPageGroups['SkinShop'] = 'wiki';
 $wgResourceModules['ext.skinshop'] = array(
 	'styles' => 'skinshop.css',
 	'localBasePath' => dirname(__FILE__),
-	'remoteExtPath' => 'SkinShop'
+	'remoteExtPath' => 'SkinShop',
+	'position' => 'top',
 );

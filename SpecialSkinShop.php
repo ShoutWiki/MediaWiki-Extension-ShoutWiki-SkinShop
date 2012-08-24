@@ -10,6 +10,7 @@ class SpecialSkinShop extends SpecialPage {
 			$out = $this->getOutput();
 			$this->setHeaders();
 			
+			$out->addModules( 'ext.skinshop' );
 			$out->addHTML( '
 				<div id="skinshop-payment">
 					<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
