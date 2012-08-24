@@ -1,7 +1,9 @@
+/* Wrapper around payment area */
 #skinshop-payment {
 	text-align: center;	
 }
 
+/* Centers payment form */
 #skinshop-table {
 	margin: auto;
 }

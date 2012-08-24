@@ -18,14 +18,14 @@
  * @file
  * @ingroup Extensions
  * @author Lewis Cawte
- * @copyright Copyright Â© 2012, Lewis Cawte
+ * @copyright Copyright © 2012, Lewis Cawte
  */
 
 if( !defined( 'MEDIAWIKI' ) ) {
 	die();
 }
 
-$wgExtensionCredits['specialpage']['ShoutWikiSkinShop'] = array(
+$wgExtensionCredits['specialpage'][] = array(
 	'path'           => __FILE__,
 	'name'           => 'ShoutWiki Skin Shop',
 	'author'         => 'Lewis Cawte',
