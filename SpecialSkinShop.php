@@ -21,7 +21,7 @@ class SpecialSkinShop extends SpecialPage {
 			$out->addHTML( '<h2>' . wfMessage( $shopskin )->plain(). '</h2>' );
 			$out->addHTML( '<img alt="' . $shopskin . '" border="0" src="img/skin-' . $shopskin . '.png">' );
 			$out->addWikiMsg( 'skinshop-' . $shopskin . '-desc' );
-			$out->addHTML( '<div class="skinshop-skinprice">' . wfMessage( 'skinshop-price' )->plain() . ' $' . wfMessage('skinshop-' . $shopskin . '-price' )->plain() . '</div>' )	;
+			$out->addHTML( '<div class="skinshop-skinprice">' . wfMessage( 'skinshop-price' )->plain() . ' $' . wfMessage( 'skinshop-' . $shopskin . '-price' )->plain() . '</div>' );
 			$out->addHTML( '</div>' );
 		};
 			
