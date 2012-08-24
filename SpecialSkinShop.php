@@ -35,7 +35,7 @@ class SpecialSkinShop extends SpecialPage {
 				<input type="hidden" name="cmd" value="_s-xclick" />
 				<input type="hidden" name="hosted_button_id" value="JZTP7QRW8NQBY" />
 				<table id="skinshop-table">
-				<tr><td><input type="hidden" name="on0" value="Skin">Skin</td></tr><tr><td><select name="os0" />
+				<tr><td><input type="hidden" name="on0" value="Skin">Skin</td></tr><tr><td><select name="os0">
 						<option value="BlueCloud">BlueCloud : $4.99 USD - yearly</option>
 						<option value="Hope">Hope : $3.99 USD - yearly</option>
 						<option value="Nimbus">Nimbus : $4.99 USD - yearly</option>
