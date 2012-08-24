@@ -13,6 +13,9 @@ class SpecialSkinShop extends SpecialPage {
 
 			$out->addModules( 'ext.skinshop' );
 
+			/*
+			 * Split array, and output description and image for each skin purchasable.
+			 */
 			foreach( $wgSkinShopAvailable as &$shopskin ) {
 				$out->addHTML( '<div class="skinshop-skindesc">' );
 				$out->addHTML( '<h2>' . $shopskin . '</h2>' );
@@ -21,7 +24,11 @@ class SpecialSkinShop extends SpecialPage {
 				$out->addHTML( '<div class="skinshop-skinprice">' . wfMessage( 'skinshop-price' )->plain() . ': $' . wfMessage('skinshop-' . $shopskin . '-price' )->plain() . '</div>' )	;
 				$out->addHTML( '</div>' );
 			};
-
+			
+			/*
+			 * Add Payment options, currently a (really bad) PayPal subscribe button
+			 * @TODO: Intergrate more payment options, make skin dropdown use $wgSkinShopAvailable and make less non-specific.
+			 */
 			$out->addHTML( '
 				<div id="skinshop-payment">
 					<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
