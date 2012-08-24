@@ -3,5 +3,30 @@
 }
 
 #skinshop-table {
-	 margin: auto;
+	margin: auto;
+}
+
+.skinshop-skindesc {
+	border-bottom: 1px solid #CCCCCC;
+	padding-bottom: 6px;
+}
+	
+.skinshop-skindesc h2 {
+	border: none;
+	text-align: right;
+}
+
+.skinshop-skindesc img {
+	padding: 4px;
+	border: solid;
+	border-color: #DDDDDD #AAAAAA #AAAAAA #DDDDDD;
+	border-width: 1px 2px 2px 1px;
+	background-color: white;
+	border-radius: 4px;
+}
+
+.skinshop-skinprice {
+	font-weight: bold;
+	text-align: right;
+	margin-right: 5px;
 }
