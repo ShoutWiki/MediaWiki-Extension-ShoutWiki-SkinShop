@@ -18,7 +18,7 @@
  * @file
  * @ingroup Extensions
  * @author Lewis Cawte
- * @copyright Copyright © 2012, Lewis Cawte
+ * @copyright Copyright © 2013, Lewis Cawte
  */
 
 if( !defined( 'MEDIAWIKI' ) ) {
@@ -31,13 +31,14 @@ $wgExtensionCredits['specialpage'][] = array(
 	'author'         => 'Lewis Cawte',
 	'descriptionmsg' => 'skinshop-desc',
 	'url'            => 'https://www.mediawiki.org/wiki/Extension:ShoutWiki_SkinShop',
-	'version'		 => '0.5alpha',
+	'version'        => '0.5alpha',
 );
 
 $dir = dirname(__FILE__) . '/';
 $wgAutoloadClasses['SpecialSkinShop'] = $dir . 'SpecialSkinShop.php';
-$wgSpecialPages['SkinShop'] = 'SpecialSkinShop';
 $wgExtensionMessagesFiles['SkinShop'] = $dir . 'SkinShop.i18n.php';
+$wgHooks['ShoutWikiShopHeaderItems'][] = 'SpecialSkinShop::buildSWSkinShopHeader';
+$wgSpecialPages['SkinShop'] = 'SpecialSkinShop';
 $wgSpecialPageGroups['SkinShop'] = 'wiki';
 
 $wgResourceModules['ext.skinshop'] = array(
