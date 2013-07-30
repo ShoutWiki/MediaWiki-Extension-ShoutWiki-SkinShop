@@ -37,7 +37,7 @@ $wgExtensionCredits['specialpage'][] = array(
 $dir = dirname(__FILE__) . '/';
 $wgAutoloadClasses['SpecialSkinShop'] = $dir . 'SpecialSkinShop.php';
 $wgExtensionMessagesFiles['SkinShop'] = $dir . 'SkinShop.i18n.php';
-$wgHooks['ShoutWikiShopHeaderItems'][] = 'SpecialSkinShop::buildSWSkinShopHeader';
+$wgHooks['ShoutWikiShopHeaderItems'][] = 'SpecialSkinShop::addtoSWSkinShopHeader';
 $wgSpecialPages['SkinShop'] = 'SpecialSkinShop';
 $wgSpecialPageGroups['SkinShop'] = 'wiki';
 

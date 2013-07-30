@@ -32,7 +32,7 @@ class SpecialSkinShop extends SpecialPage {
 		$out->addHTML( wfMessage( 'skinshop-attribution' )->plain() . '<a href="http://www.lewiscawte.me">Lewis Cawte</a>.' );
 	}
 	
-	public function buildSWSkinShopHeader( $links ) {
+	public function addtoSWSkinShopHeader( $links ) {
 		$links = Linker::link( SpecialPage::getTitleFor( 'SkinShop' ), 'Skin Shop' );
 	}
 }
