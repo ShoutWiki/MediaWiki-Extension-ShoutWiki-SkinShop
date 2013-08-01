@@ -12,7 +12,9 @@ class SpecialSkinShop extends SpecialPage {
 		$this->setHeaders();
 		$out->addModules( 'ext.skinshop' );
 
-		$this->buildSWShopHeader();
+		$shopHooks = new ShopLibraryHooks( $links );
+		$out->addHTML( $shopHooks->buildSWShopHeader() );
+
 		/*
 		 * Split array, and output description and image for each skin purchasable.
 		 */
@@ -31,7 +33,7 @@ class SpecialSkinShop extends SpecialPage {
 		$out->addHTML( '<hr />' );
 		$out->addHTML( wfMessage( 'skinshop-attribution' )->plain() . '<a href="http://www.lewiscawte.me">Lewis Cawte</a>.' );
 	}
-	
+
 	public function addtoSWSkinShopHeader( $links ) {
 		$links = Linker::link( SpecialPage::getTitleFor( 'SkinShop' ), 'Skin Shop' );
 	}
