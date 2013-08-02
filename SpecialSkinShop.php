@@ -12,7 +12,7 @@ class SpecialSkinShop extends SpecialPage {
 		$this->setHeaders();
 		$out->addModules( 'ext.skinshop' );
 
-		$shopHooks = new ShopLibraryHooks( $links );
+		$shopHooks = new ShopLibraryHooks();
 		$out->addHTML( $shopHooks->buildSWShopHeader() );
 
 		/*
@@ -22,7 +22,7 @@ class SpecialSkinShop extends SpecialPage {
 			$out->addHTML( '<div class="skinshop-skindesc">' );
 			$out->addHTML( '<h2>' . wfMessage( $shopskin )->plain(). '</h2>' );
 			$out->addHTML( '<img alt="' . $shopskin . '" border="0" src="img/skin-' . $shopskin . '.png">' );
-			$out->addWikiMsg( 'skinshop-' . $shopskin . '-desc' );	
+			$out->addWikiMsg( 'skinshop-' . $shopskin . '-desc' );
 			$out->addHTML( '<div class="skinshop-skinprice">' . wfMessage( 'skinshop-price' )->plain() . ' $' . wfMessage( 'skinshop-' . $shopskin . '-price' )->plain() . '</div>' );
 			$out->addHTML( '</div>' );
 		};
@@ -34,7 +34,7 @@ class SpecialSkinShop extends SpecialPage {
 		$out->addHTML( wfMessage( 'skinshop-attribution' )->plain() . '<a href="http://www.lewiscawte.me">Lewis Cawte</a>.' );
 	}
 
-	public function addtoSWSkinShopHeader( $links ) {
-		$links = Linker::link( SpecialPage::getTitleFor( 'SkinShop' ), 'Skin Shop' );
+	public function addtoSWSkinShopHeader( &$links ) {
+		$links[] = Linker::link( SpecialPage::getTitleFor( 'SkinShop' ), 'Skin Shop' );
 	}
 }
